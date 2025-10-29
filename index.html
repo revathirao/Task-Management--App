@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script  defer  src="index.js"></script>
 
-    <title>Task MAnagement App</title>
+    <title>Task Management App</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
 <main class="app-container">
     
-    <h2>Task MAnagement App</h2>
+    <h2>Task Management App</h2>
 
     <!-- Input fields for adding new task with task-name, category, deadline, and status. -->
 
@@ -40,15 +40,15 @@
 
     <label for="status">Status </label>
     <Select id="status">
-        <option value="In-progress" selected></option>
-        <option value="Completed"></option>
-        <option value="Overdue"></option>
+        <option value="In-progress" selected >In-progress</option>
+        <option value="Completed">Completed</option>
+        <option value="Overdue">Overdue</option>
     </Select>
 </div>  
 
 <!-- add task button -->
 
-    <button id="ad-task=btn">Add New Task</button>
+    <button id="add-task-btn">Add New Task</button>
 
     <!-- List of tasks--> 
 
@@ -59,6 +59,10 @@
 
         </ul>
     </div>
+
+    <!-- Remove Task button -->
+    <button id="remove-task-btn">Remove Task</button> 
+    <button id="update-task-btn">Update Task</button>
 
 </main>
 

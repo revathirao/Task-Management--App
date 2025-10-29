@@ -3,13 +3,16 @@
 
 //createe vatiables to theinput field
 
+let task_myArray =[];
 let input_taskName = document.getElementById("task-name");
 let input_category = document.getElementById("category");
 let input_deadline = document.getElementById("deadline");
 let input_status = document.getElementById("status");
-let button_addTask = document.getElementById("ad-task=btn");
+let button_addTask = document.getElementById("add-task-btn");
+let button_removeTask = document.getElementById("remove-task-btn");
+let button_updateTask = document.getElementById("update-task-btn");
+let taskList = document.getElementById("task-list")
 
-let taskList =[];
 
 button_addTask.addEventListener("click",function(){
 
@@ -22,7 +25,7 @@ button_addTask.addEventListener("click",function(){
         }
 
 //add task to array-task-list
-taskList.push[task];
+task_myArray.push(task);
 
 //clear inputs after adding the inputs
 input_taskName.value="";
@@ -30,4 +33,38 @@ input_category.value ="";
 input_deadline.value ="";
 input_status.value ="";
 
+//diplays task aafter adding it
+
+displayTask();
+
 }); 
+
+//
+
+// //dis[laying the task list
+function displayTask() {
+    taskList.innerHTML = "";
+
+    if (task_myArray.length === 0) {
+        alert("No task displayed");
+    } else {
+        for (let i = 0; i < task_myArray.length; i++) {
+            let taskItem = document.createElement("li");
+            taskItem.innerText = 
+                `${task_myArray[i].taskName} | ${task_myArray[i].category} | ${task_myArray[i].deadline} | ${task_myArray[i].status}`
+            taskList.appendChild(taskItem)
+        }
+    }
+}
+
+button_removeTask.addEventListener("click", function(){
+
+    if(task_myArray.length===0){
+        alert("There is no item to  remove from the cart")
+    }else{
+        task_myArray.pop();
+        displayTask();
+    }
+    
+});
+
