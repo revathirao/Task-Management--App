@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  defer  src="index.js"></script>
+
+    <title>Task MAnagement App</title>
+</head>
+
+<body>
+    <!-- Create input fields for task name, category, deadline, and an initial status (e.g., “In Progress”). -->
+    <!-- Add “Add Task” button -->
+    <!-- ------2------- -->
+    <!-- Add unordered list -->
+    <!-- For each task, display the task name, category, deadline, and status. -->
+    <!-- For each task, display the task name, category, deadline, and status. -->
+    <!-- ---3----- -->
+    <!-- Status of tasks drop down (e.g., “In Progress,” “Completed” -->
+    <!-- Automatically check each task’s deadline and mark tasks as “Overdue” if the current date has passed the deadline. -->
+
+<main class="app-container">
+    
+    <h2>Task MAnagement App</h2>
+
+    <!-- Input fields for adding new task with task-name, category, deadline, and status. -->
+
+    <div id="task-orm"> 
+    <label for="task-name">Enter Task Name </label>
+    <input id="task-name"  type="text"  placeholder="Enter taskn name"></Input>
+
+    <label for="category">Enter category </label>
+    <input id="category" type="text" placeholder="Enter category"></Input>
+
+    <label for="deadline">Enter deadline </label>
+    <input id="deadline" type="date" placeholder="Enter deadline"></Input>
+
+    <!-- <!-- dropdown buuon to filterstatus -->
+
+    <label for="status">Status </label>
+    <Select id="status">
+        <option value="">---Select---</option>
+        <option value="In-progress"></option>
+        <option value="Completed"></option>
+        <option value=“Overdue"></option>
+    </Select>
+</div>  
+
+<!-- add task button -->
+
+    <button id="ad-task=btn">Add New Task</button>
+
+    <!-- List of tasks--> 
+
+    <div id="task-list-container ">
+        <h3>Task-List</h3>
+
+        <ul id="task-list">
+
+        </ul>
+    </div>
+
+</main>
+
+
+</body>
+
+</html>
