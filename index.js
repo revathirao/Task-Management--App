@@ -68,33 +68,32 @@ button_removeTask.addEventListener("click", function(){
     
 });
 
-button_updateTask.addEventListener("click",function(){
-    let taskNameToBeUpdated  = prompt("Enter the task name")
+button_updateTask.addEventListener("click", function () {
+    let taskNameToBeUpdated = prompt("Enter the task name")
 
     //go through each item in the list until u find the match
-for(let i =0; i < task_myArray.length; i++){
-    
-    if(task_myArray[i].taskName ===taskNameToBeUpdated ){
-    
-     //get the status from user
-     let newStatus =  prompt ("Enter the status like complete or inprogress  or overdue")
+    for (let i = 0; i < task_myArray.length; i++) {
 
-        //validate
-        if(newStatus === "inprogress" || newStatus === "complete" || newStatus === "overdue"){
-            task_myArray.status =  newStatus;
-            addItemToCart("Status Updated to: " + newStatus);
-            displayTask();
-        }else{
-            alert("Invalid status! Please enter: overdue, inprogress, or complete.");
+        if (task_myArray[i].taskName === taskNameToBeUpdated) {
+
+            //get the status from user
+            let newStatus = prompt("Enter the status like complete or inprogress  or overdue")
+
+            newStatus = newStatus.toLowerCase();
+
+            //validate
+            if (newStatus === "inprogress" || newStatus === "completed" || newStatus === "overdue") {
+                task_myArray[i].status = newStatus;
+                displayTask();
+                
+                alert("Status Updated to: " + newStatus);
+            } else {
+                alert("Invalid status! Please enter: Overdue, Inprogress, or Completed.");
             }
-            return  
+            return
         }
     }
-     // If no task was found
+    // If no task was found
     alert("Task not found!");
-}
-
-
-
 
 });
