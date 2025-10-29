@@ -4,18 +4,21 @@
 //createe vatiables to theinput field
 
 let task_myArray =[];
-let input_taskName = document.getElementById("task-name");
-let input_category = document.getElementById("category");
-let input_deadline = document.getElementById("deadline");
-let input_status = document.getElementById("status");
-let button_addTask = document.getElementById("add-task-btn");
-let button_removeTask = document.getElementById("remove-task-btn");
-let button_updateTask = document.getElementById("update-task-btn");
-let taskList = document.getElementById("task-list")
+const input_taskName = document.getElementById("task-name");
+const input_category = document.getElementById("category");
+const input_deadline = document.getElementById("deadline");
+const input_status = document.getElementById("status");
+const button_addTask = document.getElementById("add-task-btn");
+const button_removeTask = document.getElementById("remove-task-btn");
+const button_updateTask = document.getElementById("update-task-btn");
+const taskList = document.getElementById("task-list")
+const filter_status = document.getElementById("filter-status")
 
 
+//add Task
 button_addTask.addEventListener("click",function(){
 
+    
 // create task object
     const task = {
         taskName: input_taskName.value.trim(),
@@ -39,19 +42,19 @@ displayTask();
 
 }); 
 
-//
 
-// //dis[laying the task list
-function displayTask() {
+//dis[laying the task list
+function displayTask(array= task_myArray) {
     taskList.innerHTML = "";
 
-    if (task_myArray.length === 0) {
-        alert("No task displayed");
+    if (array.length === 0) {
+         taskList.innerHTML = "<li>No tasks available</li>";
+        // alert("No task displayed");
     } else {
-        for (let i = 0; i < task_myArray.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             let taskItem = document.createElement("li");
             taskItem.innerText = 
-                `${task_myArray[i].taskName} | ${task_myArray[i].category} | ${task_myArray[i].deadline} | ${task_myArray[i].status}`
+                `${array[i].taskName} | ${array[i].category} | ${array[i].deadline} | ${array[i].status}`
             taskList.appendChild(taskItem)
         }
     }
@@ -96,4 +99,31 @@ button_updateTask.addEventListener("click", function () {
     // If no task was found
     alert("Task not found!");
 
+});
+
+
+
+filter_status.addEventListener("change", function () {
+    let taskSelected = filter_status.value.toLowerCase();
+    let filteredTask = [];
+
+    // If user chooses "all", just display everything
+    if (taskSelected === "all") {
+        displayTask(task_myArray);
+        return;
+    }
+
+    // Loop through all tasks and add matching ones to filteredTask
+    for (let i = 0; i < task_myArray.length; i++) {
+        if (task_myArray[i].status.toLowerCase() === taskSelected) {
+            filteredTask.push(task_myArray[i]);
+        }
+    }
+
+    // Display only matching tasks
+    if (filteredTask.length === 0) {
+        taskList.innerHTML = "<li>No task found</li>";
+    } else {
+        displayTask(filteredTask);
+    }
 });

@@ -4,67 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script  defer  src="index.js"></script>
+    <script defer src="index.js"></script>
 
     <title>Task Management App</title>
 </head>
 
 <body>
-    <!-- Create input fields for task name, category, deadline, and an initial status (e.g., “In Progress”). -->
-    <!-- Add “Add Task” button -->
-    <!-- ------2------- -->
-    <!-- Add unordered list -->
-    <!-- For each task, display the task name, category, deadline, and status. -->
-    <!-- For each task, display the task name, category, deadline, and status. -->
-    <!-- ---3----- -->
-    <!-- Status of tasks drop down (e.g., “In Progress,” “Completed” -->
-    <!-- Automatically check each task’s deadline and mark tasks as “Overdue” if the current date has passed the deadline. -->
 
-<main class="app-container">
-    
-    <h2>Task Management App</h2>
 
-    <!-- Input fields for adding new task with task-name, category, deadline, and status. -->
+    <main class="rapp-containe" >
 
-    <div id="task-orm"> 
-        <label for="task-name">Enter Task Name </label>
-        <input id="task-name"  type="text"  placeholder="Enter taskn name"></Input>
+        <h2>Task Management App</h2>
 
-        <label for="category">Enter category </label>
-        <input id="category" type="text" placeholder="Enter category"></Input>
+        <!-- Input fields for adding new task with task-name, category, deadline, and status. -->
 
-    <label for="deadline">Enter deadline </label>
-    <input id="deadline" type="date" placeholder="Enter deadline"></Input>
+        <div id="task-form" >
+            <label for="task-name">Task Name </label>
+            <input id="task-name" type="text" placeholder="Enter taskn name"></Input>
 
-    <!-- <!-- dropdown buuon to filterstatus -->
+            <label for="category">category </label>
+            <input id="category" type="text" placeholder="Enter category"></Input>
 
-    <label for="status">Status </label>
-    <Select id="status">
-        <option value="In-progress" selected >In-progress</option>
-        <option value="Completed">Completed</option>
-        <option value="Overdue">Overdue</option>
-    </Select>
-</div>  
+            <label for="deadline">deadline </label>
+            <input id="deadline" type="date" placeholder="Enter deadline"></Input>
 
-<!-- add task button -->
+            <!-- <!-- dropdown buuon to filterstatus -->
 
-    <button id="add-task-btn">Add New Task</button>
+            <label for="status">Status </label>
+            <Select id="status">
+                <option value="In-progress" selected>In-progress</option>
+                <option value="Completed">Completed</option>
+                <option value="Overdue">Overdue</option>
+            </Select>
+        </div>
 
-    <!-- List of tasks--> 
+        <!-- add task button -->
 
-    <div id="task-list-container ">
-        <h3>Task-List</h3>
+        <button id="add-task-btn">Add New Task</button>
 
-        <ul id="task-list">
+        <!-- List of tasks-->
 
-        </ul>
-    </div>
+        <div id="task-list-container">
+            <h3>Task-List</h3>
+            <Select id="filter-status">
+                <option value="All" selected>All</option>
+                <option value="In-progress" >In-progress</option>
+                <option value="Completed">Completed</option>
+                <option value="Overdue">Overdue</option>
+            </Select>
 
-    <!-- Remove Task button -->
-    <button id="remove-task-btn">Remove Task</button> 
-    <button id="update-task-btn">Update Task</button>
+            <ul id="task-list">
 
-</main>
+            </ul>
+        </div>
+
+        <!-- Remove Task button -->
+        <button id="remove-task-btn">Remove Task</button>
+        <button id="update-task-btn">Update Task</button>
+
+    </main>
 
 
 </body>
