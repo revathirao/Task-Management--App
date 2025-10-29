@@ -20,10 +20,14 @@ button_addTask.addEventListener("click",function(){
         deadline: input_deadline.value, 
         status: input_status.value
         }
-}); 
 
 //add task to array-task-list
 taskList.push[task];
 
 //clear inputs after adding the inputs
 input_taskName.value="";
+input_category.value ="";
+input_deadline.value ="";
+input_status.value ="";
+
+}); 
