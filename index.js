@@ -68,3 +68,33 @@ button_removeTask.addEventListener("click", function(){
     
 });
 
+button_updateTask.addEventListener("click",function(){
+    let taskNameToBeUpdated  = prompt("Enter the task name")
+
+    //go through each item in the list until u find the match
+for(let i =0; i < task_myArray.length; i++){
+    
+    if(task_myArray[i].taskName ===taskNameToBeUpdated ){
+    
+     //get the status from user
+     let newStatus =  prompt ("Enter the status like complete or inprogress  or overdue")
+
+        //validate
+        if(newStatus === "inprogress" || newStatus === "complete" || newStatus === "overdue"){
+            task_myArray.status =  newStatus;
+            addItemToCart("Status Updated to: " + newStatus);
+            displayTask();
+        }else{
+            alert("Invalid status! Please enter: overdue, inprogress, or complete.");
+            }
+            return  
+        }
+    }
+     // If no task was found
+    alert("Task not found!");
+}
+
+
+
+
+});
