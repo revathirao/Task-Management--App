@@ -1,6 +1,3 @@
-// Each Task stored as an oblect with properties such as task name, category, deadline, and status.
-// Add the Task items to Aray
-
 //createe vatiables to theinput field
 
 let task_myArray = [];
@@ -18,13 +15,13 @@ const filter_status = document.getElementById("filter-status")
 //add Task
 button_addTask.addEventListener("click", function () {
 
-  if (
+    if (
         input_taskName.value.trim() === "" ||
         input_category.value.trim() === "" ||
         input_deadline.value === ""
     ) {
         alert("Please fill in all fields before adding a task.");
-        return; 
+        return;
     }
     // create task object
     const task = {
