@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="index.js"></script>
-
+    <link rel="stylesheet" href="styles.css">
     <title>Task Management App</title>
 </head>
 
 <body>
 
 
-    <main class="rapp-containe" >
+    <main class="app-container" >
 
         <h2>Task Management App</h2>
 
         <!-- Input fields for adding new task with task-name, category, deadline, and status. -->
 
-        <div id="task-form" >
+        <div id="app-container1">
             <label for="task-name">Task Name </label>
             <input id="task-name" type="text" placeholder="Enter taskn name"></Input>
 
@@ -41,26 +41,33 @@
         <!-- add task button -->
 
         <button id="add-task-btn">Add New Task</button>
+              <!-- Remove Task button -->
+        <button id="remove-task-btn">Remove Task</button>
+        <button id="update-task-btn">Update Task</button>
 
         <!-- List of tasks-->
 
         <div id="task-list-container">
             <h3>Task-List</h3>
             <Select id="filter-status">
-                <option value="All" selected>All</option>
+                <option value="All" selected>All Status</option>
                 <option value="In-progress" >In-progress</option>
                 <option value="Completed">Completed</option>
                 <option value="Overdue">Overdue</option>
             </Select>
+
+            <select id="filter-category">
+  <option value="all">All Categories</option>
+  <option value="Work">Work</option>
+  <option value="Personal">Personal</option>
+</select>
 
             <ul id="task-list">
 
             </ul>
         </div>
 
-        <!-- Remove Task button -->
-        <button id="remove-task-btn">Remove Task</button>
-        <button id="update-task-btn">Update Task</button>
+  
 
     </main>
 

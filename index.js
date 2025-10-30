@@ -3,7 +3,7 @@
 
 //createe vatiables to theinput field
 
-let task_myArray =[];
+let task_myArray = [];
 const input_taskName = document.getElementById("task-name");
 const input_category = document.getElementById("category");
 const input_deadline = document.getElementById("deadline");
@@ -16,59 +16,66 @@ const filter_status = document.getElementById("filter-status")
 
 
 //add Task
-button_addTask.addEventListener("click",function(){
+button_addTask.addEventListener("click", function () {
 
-    
-// create task object
+  if (
+        input_taskName.value.trim() === "" ||
+        input_category.value.trim() === "" ||
+        input_deadline.value === ""
+    ) {
+        alert("Please fill in all fields before adding a task.");
+        return; 
+    }
+    // create task object
     const task = {
         taskName: input_taskName.value.trim(),
         category: input_category.value.trim(),
-        deadline: input_deadline.value, 
+        deadline: input_deadline.value,
         status: input_status.value
-        }
+    }
 
-//add task to array-task-list
-task_myArray.push(task);
+    //add task to array-task-list
+    task_myArray.push(task);
 
-//clear inputs after adding the inputs
-input_taskName.value="";
-input_category.value ="";
-input_deadline.value ="";
-input_status.value ="";
+    //clear inputs after adding the inputs
+    input_taskName.value = "";
+    input_category.value = "";
+    input_deadline.value = "";
+    input_status.value = "";
 
-//diplays task aafter adding it
+    //diplays task aafter adding it
 
-displayTask();
+    displayTask();
 
-}); 
+});
 
 
 //dis[laying the task list
-function displayTask(array= task_myArray) {
+function displayTask(array = task_myArray) {
     taskList.innerHTML = "";
 
     if (array.length === 0) {
-         taskList.innerHTML = "<li>No tasks available</li>";
+        taskList.innerHTML = "<li>No tasks available</li>";
         // alert("No task displayed");
     } else {
         for (let i = 0; i < array.length; i++) {
             let taskItem = document.createElement("li");
-            taskItem.innerText = 
+            taskItem.innerText =
                 `${array[i].taskName} | ${array[i].category} | ${array[i].deadline} | ${array[i].status}`
             taskList.appendChild(taskItem)
         }
     }
 }
 
-button_removeTask.addEventListener("click", function(){
+button_removeTask.addEventListener("click", function () {
 
-    if(task_myArray.length===0){
+    if (task_myArray.length === 0) {
         alert("There is no item to  remove from the cart")
-    }else{
+    } else {
         task_myArray.pop();
         displayTask();
     }
-    
+
 });
 
 button_updateTask.addEventListener("click", function () {
@@ -88,7 +95,7 @@ button_updateTask.addEventListener("click", function () {
             if (newStatus === "inprogress" || newStatus === "completed" || newStatus === "overdue") {
                 task_myArray[i].status = newStatus;
                 displayTask();
-                
+
                 alert("Status Updated to: " + newStatus);
             } else {
                 alert("Invalid status! Please enter: Overdue, Inprogress, or Completed.");
@@ -126,4 +133,17 @@ filter_status.addEventListener("change", function () {
     } else {
         displayTask(filteredTask);
     }
+});
+
+
+filter_category.addEventListener("change", function () {
+    const selectedCat = filter_category.value.toLowerCase();
+    if (selectedCat === "all") {
+        displayTask(task_myArray);
+        return;
+    }
+    const filtered = task_myArray.filter(
+        t => t.category.toLowerCase() === selectedCat
+    );
+    displayTask(filtered);
 });
