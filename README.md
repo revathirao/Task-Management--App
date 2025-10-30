@@ -42,3 +42,6 @@ README.md
 Challenges
 
 The most challenging part of the project was implementing the filter feature, as it took me the most time to get it working correctly. I also did not manage to include local storage or the overdue detection feature yet.I found it difficult to include both the filtering feature and the dropdown for adding tasks in the same section, so I decided to create a separate filter instead.
+
+Screenshot
+![alt text](image.png)

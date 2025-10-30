@@ -53,7 +53,6 @@ function displayTask(array = task_myArray) {
 
     if (array.length === 0) {
         taskList.innerHTML = "<li>No tasks available</li>";
-        // alert("No task displayed");
     } else {
         for (let i = 0; i < array.length; i++) {
             let taskItem = document.createElement("li");
