@@ -1,45 +1,62 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 30px;
-  justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
 }
 
 
-#app-container1{
+#app-container1 {
     display: flex;
 }
 
 .app-container {
-  background: grey;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 800px;
-  height: 100%;
+    background: grey;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 850px;
+    height: 100%;
 }
 
 #task-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  align-items: end;
-  margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 12px;
 }
 
 h2 {
-  text-align: center;
-  color: #333;
+    text-align: center;
+    color: #333;
+    padding-bottom: 30px;
 }
 
-input, select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+input,
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    ;
 }
 
+#add-task-btn {
+    margin-top: 1rem;
+    ;
+}
 
-#add-task-btn{
-    margin-top: 1rem;;
+label {
+    margin-right: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+    padding-top: 15px;
+    ;
 }

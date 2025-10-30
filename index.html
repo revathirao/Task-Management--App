@@ -20,18 +20,18 @@
 
         <div id="app-container1">
             <label for="task-name">Task Name </label>
-            <input id="task-name" type="text" placeholder="Enter taskn name"></Input>
+            <input id="task-name" type="text" placeholder="Enter taskn name" class="input"></Input>
 
             <label for="category">Category </label>
-            <input id="category" type="text" placeholder="Enter category"></Input>
+            <input id="category" type="text" placeholder="Enter category" class="input"></Input>
 
             <label for="deadline">Deadline </label>
-            <input id="deadline" type="date" placeholder="Enter deadline"></Input>
+            <input id="deadline" type="date" placeholder="Enter deadline" class="input"></Input>
 
             <!-- <!-- dropdown buuon to filterstatus -->
 
             <label for="status">Status </label>
-            <Select id="status">
+            <Select id="status" class="input">
                 <option value="In-progress" selected>In-progress</option>
                 <option value="Completed">Completed</option>
                 <option value="Overdue">Overdue</option>
@@ -39,12 +39,12 @@
         </div>
 
         <!-- add task button -->
-
-        <button id="add-task-btn">Add New Task</button>
-        <!-- Remove Task button -->
-        <button id="remove-task-btn">Remove Task</button>
-        <button id="update-task-btn">Update Task</button>
-
+        <div class="btn">
+            <button id="add-task-btn">Add New Task</button>
+            <!-- Remove Task button -->
+            <button id="remove-task-btn">Remove Task</button>
+            <button id="update-task-btn">Update Task</button>
+        </div>
         <!-- List of tasks-->
 
         <div id="task-list-container">
